@@ -1,0 +1,26 @@
+jack of all trades
+
+redirect is really powerful
+
+301 vs 302
+perm vs temp
+
+use temp. redirect for minor errors like
+products missing in product page
+so when crawlers come back and check
+they index your pages
+
+
+nginx - subdomain
+
+server of its own
+
+:: - ipv6 notation
+
+https://www.geeksforgeeks.org/difference-between-lossy-compression-and-lossless-compression/
+
+Nginx - gzip
+
+compression stuff - very powerful
+
+

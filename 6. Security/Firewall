@@ -1,0 +1,22 @@
+Hardware vs software port
+
+just like car/buildings
+
+nmap - port scanner
+checks for open ports
+install nmap:
+
+varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ nmap 192.81.217.142
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2020-08-15 12:06 UTC
+Nmap scan report for ubuntu-s-1vcpu-1gb-nyc1-01 (192.81.217.142)
+Host is up (0.00013s latency).
+Not shown: 997 closed ports
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+3000/tcp open  ppp
+
+Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
+
+nmap -sV 192.81.217.142

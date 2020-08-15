@@ -1,0 +1,18 @@
+Interesting:
+grab attack ip from logs:
+sudo cat /var/log/auth.log
+and put it in the geoip db
+
+https://www.maxmind.com/en/geoip-demo
+
+
+Checklist
+
+gray hats
+black hats
+stuxnet
+
+google x team - being good
+security issues - report to manufcatures
+white hack team
+

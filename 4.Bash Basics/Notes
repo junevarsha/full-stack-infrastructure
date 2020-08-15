@@ -1,0 +1,13 @@
+  109  touch test.log
+  110  ps > test.log
+  111  cat test.log
+  112  ls /var/log
+  113  find /var/log/ -name sys
+  114  sudo find /var/log/nginx/ -type f -name "*.log"
+  115  find / -type d -name log
+  116  sudo find / -type d -name log
+  117  ps aux | grep node
+  118  sudo cat /var/log/auth.log
+  119  sudo cat /var/log/auth.log | varsha
+  120  sudo cat /var/log/auth.log | grep varsha
+  121  history
