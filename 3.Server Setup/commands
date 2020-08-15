@@ -1,0 +1,32 @@
+    1  exit
+    2  whoami
+    3  apt update
+    4  apt upgrade
+    5  adduser varsha
+    6  usermod -aG sudo varsha
+    7  su varsha
+    8  history
+    9 sudo cat /var/log/auth.log
+    10 ssh -i fsfe root@192.81.217.142
+    11 tail -f
+    12 sudo head less /var/log/auth.log
+    13 sudo tail less /var/log/auth.log
+    14 sudo tail -f less /var/log/auth.log
+
+view hidden files : ls -a
+
+mkdir -p ~/.ssh
+   15  ls -a
+   16  ls
+   17  vi ~/.ssh/authorized_keys
+   18  rm ~/.ssh/authorized_keys
+   19  vi ~/.ssh/authorized_keys
+   20  exit
+   21  ls -a
+   22  cd .ssh/
+   23  ls
+   24  vi authorized_keys
+   25  exit
+   26  chmod 644 ~/.ssh/authorized_keys
+   27  sudo vi /etc/ssh/sshd_config
+   28  sudo service sshd restart

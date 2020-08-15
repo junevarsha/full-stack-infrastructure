@@ -1,0 +1,20 @@
+Internet is stateless
+req-resp is brand new
+
+web is stateless
+
+set-cookie : sets stateful information
+be careful dont put too much data
+it causes overhead and introduces delay
+
+x- : custom header
+
+request header:
+is all about who am I wer I am from ...
+
+response header:
+what server is sending you
+
+status code 
+funny status codes (teapot, cat)
+

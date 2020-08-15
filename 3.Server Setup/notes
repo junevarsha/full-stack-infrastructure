@@ -1,0 +1,16 @@
+#  - super user
+check whoami
+
+a records = map name to ip address
+cname = maps name to name
+
+every ubuntu distr. should have auth log
+
+registrar = aws
+Nameservers in route 53
+replace it with digital ocean 
+NS records
+
+This means we moved ownership of who
+owns espressoandcroissant.com to
+digital ocean.

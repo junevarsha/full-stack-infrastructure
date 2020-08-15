@@ -1,0 +1,20 @@
+Nginx - web server
+light weight, extremely fast
+It can do little bit of everything.....
+
+apache - most popular
+
+LAMP stack - Linux, apache, mysql, php
+
+HOW DOES THE INTERNET WORK?
+domain-> ns-> i know wr ur trying to go -> 
+here is the IP -> switch/router/nodes ->server
+-> nginx -> html page
+
+   31  sudo apt install nginx
+   32  yes
+   33  sudo service nginx start
+   34  sudo less /etc/nginx/sites-available/default
+   35  sudo vi /var/www/html/index.html
+   36  history
+
