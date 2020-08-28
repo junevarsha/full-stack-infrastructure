@@ -20,3 +20,39 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
 
 nmap -sV 192.81.217.142
+
+port - communication process that
+maps to specific service
+
+ufw - uncomplicated firewall
+(slowing down hackers - blackhole them by denying
+reject - tmi )
+
+varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw enable
+[sudo] password for varsha:
+Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
+Firewall is active and enabled on system startup
+varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw allow ssh
+Rule added
+Rule added (v6)
+varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere
+22/tcp (v6)                ALLOW       Anywhere (v6)
+
+varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw allow http
+Rule added
+Rule added (v6)
+varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere
+80/tcp                     ALLOW       Anywhere
+22/tcp (v6)                ALLOW       Anywhere (v6)
+80/tcp (v6)                ALLOW       Anywhere (v6)
+
