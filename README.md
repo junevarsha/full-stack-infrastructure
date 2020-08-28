@@ -58,6 +58,49 @@ EVERYTHING RUNS ON TRUST
 
 # 2. Server Setup
 
+## What does server do?
+
+Serves Content see server.js (simple server)
+
+Data centers(collection of computers) - fraction of server
+
+Cloud - goal is to get least number of hops - we can keep multiple copies of data in various places - renewable energy - wind farm - elastic - scale up & down - pay for what you need - on-demand
+
+server is divided into chunks. chunks - virtual private server
+(process isolation, chunks dont know about each other)
+
+Lets buy VPS in digital ocean.
+
+## Operating Systems
+
+Why do we choose Ubuntu?
+
+Windows and Unix
+
+Linux is flavor of Unix
+
+Kernel - talks to machine hardware
+
+Cool Idea behind Linux:
+Instead of baking everything to OS
+we bake Utilities
+
+Utilities -> applications that just do one thing
+
+Long Term Support (LTS version)
+
+For production - always use LTS.
+Netflix uses LTS node. Downside is if node supports top-lvl asynch await 
+we cant use it until it moves to LTS node.
+
+## SSH
+
+    ssh -i fsfe root@<ip>
+    <add fsfe to keychain if not added>
+    ssh root@<ip> -v
+
+![ssh](https://drive.google.com/file/d/144z3LTUMzESE4n04w0r0hxeoG_tMsU6l/view?usp=sharing)
+
 # 3. Bash and Nginx
 
 # 4. Security
