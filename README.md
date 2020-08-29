@@ -102,9 +102,11 @@ we cant use it until it moves to LTS node.
 ## AWS->Digital Ocean NS transfer
 
 #is - super user
+
 check whoami
 
 a records = map name to ip address
+
 cname = maps name to name
 
 every ubuntu distr. should have auth log
@@ -171,7 +173,8 @@ js environment for server side
 binding for the v8 enginer(google) developed
 for chrome (most popular compiler)
 
-single threaded js engine that execultes js 
+single threaded js engine that executes js 
+
 handles requests
 
     sudo apt install nodejs npm
@@ -223,20 +226,22 @@ handle errors
     git commit -am "simple express setup"
     git push -u origin master
 
-## Recap
+## Recap/Resources
 
 fail2ban
+
 express performance tips
 
 a lot of unappreciated work
 
 domain -> IP -> server
--> web server -> application server
+-> web server(nginx) -> application server(express)
 
 # 3. Bash and Nginx
 
 ## Bash
 
+    ps | grep bash (redirection/ read from stdout)
     touch test.log
     ps > test.log
     cat test.log
@@ -272,84 +277,106 @@ compression stuff - very powerful
 
 # 4. Security
 
-Interesting:
-grab attack ip from logs:
-sudo cat /var/log/auth.log
-and put it in the geoip db
+Interesting - Grab attack ip from logs:
 
-https://www.maxmind.com/en/geoip-demo
+    sudo cat /var/log/auth.log
+    put it in the geoip db
 
+[Maxmind](https://www.maxmind.com/en/geoip-demo)
 
-Checklist
+### Security Checklist 
 
-gray hats
-black hats
-stuxnet
+ssh - firewall - updates - 2fa - vpn
 
+1. gray hats
+zero day vulnerability - undocumented vulnerability - make money - selling to high bidders
+
+2. white hack team
+security issues - report to manufcatures about zero day
 google x team - being good
-security issues - report to manufcatures
-white hack team
 
+3. black hats
+bad ones or nefarious
 
+4. script kiddies
 
+5. stuxnet - iran radioacitve attack?
 
-Hardware vs software port
+Automatic updates - always keep sw uptodate(not latest version but latest patch)
+
+    sudo apt install unattended-upgrades
+    less /etc/apt/apt.conf.d/50unattended-upgrades
+
+### Security ethics
+
+google x team - find 0 day - report manufactures - doing good
+
+hey FrontEndMasters - you have a security vulnurability - what is ur responsibility?
+
+If you don't - you can shame them publically 
+
+Medical device pacemakers - security flaw - freaks me
+
+Equifax - ssn/credit history - see something - say something
+
+## Firewall
 
 just like car/buildings
 
+Hardware/Software Firewalls - allow/deny traffic
+
 nmap - port scanner
+
 checks for open ports
-install nmap:
 
-varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ nmap 192.81.217.142
-
-Starting Nmap 7.60 ( https://nmap.org ) at 2020-08-15 12:06 UTC
-Nmap scan report for ubuntu-s-1vcpu-1gb-nyc1-01 (192.81.217.142)
-Host is up (0.00013s latency).
-Not shown: 997 closed ports
-PORT     STATE SERVICE
-22/tcp   open  ssh
-80/tcp   open  http
-3000/tcp open  ppp
+    sudo apt install nmap
+    varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ nmap 142.93.13.31
+    Starting Nmap 7.60 ( https://nmap.org ) at 2020-08-15 12:06 UTC
+    Nmap scan report for ubuntu-s-1vcpu-1gb-nyc1-01 (192.81.217.142)
+    Host is up (0.00013s latency).
+    Not shown: 997 closed ports
+    PORT     STATE SERVICE
+    22/tcp   open  ssh
+    80/tcp   open  http
+    3000/tcp open  ppp
 
 Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
 
-nmap -sV 192.81.217.142
+nmap -sV 142.93.13.31
 
-port - communication process that
-maps to specific service
+port - communication process that maps to specific service - open only the ones you need
 
-ufw - uncomplicated firewall
-(slowing down hackers - blackhole them by denying
+ufw - uncomplicated firewall - nice wrapper around iptables
+(slowing down hackers - blackhole them by denying -
 reject - tmi )
 
-varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw enable
-[sudo] password for varsha:
-Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
-Firewall is active and enabled on system startup
-varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw allow ssh
-Rule added
-Rule added (v6)
-varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw status
-Status: active
+    varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw enable
+    [sudo] password for varsha:
+    Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
+    Firewall is active and enabled on system startup
+    varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw allow ssh
+    Rule added
+    Rule added (v6)
+    varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw status
+    Status: active
 
-To                         Action      From
---                         ------      ----
-22/tcp                     ALLOW       Anywhere
-22/tcp (v6)                ALLOW       Anywhere (v6)
+    To                         Action      From
+    --                         ------      ----
+    22/tcp                     ALLOW       Anywhere
+    22/tcp (v6)                ALLOW       Anywhere (v6)
 
-varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw allow http
-Rule added
-Rule added (v6)
-varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw status
-Status: active
+    varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw allow http
+    Rule added
+    Rule added (v6)
+    varsha@ubuntu-s-1vcpu-1gb-nyc1-01:~$ sudo ufw status
+    Status: active
 
-To                         Action      From
---                         ------      ----
-22/tcp                     ALLOW       Anywhere
-80/tcp                     ALLOW       Anywhere
-22/tcp (v6)                ALLOW       Anywhere (v6)
-80/tcp (v6)                ALLOW       Anywhere (v6)
+    To                         Action      From
+    --                         ------      ----
+    22/tcp                     ALLOW       Anywhere
+    80/tcp                     ALLOW       Anywhere
+    22/tcp (v6)                ALLOW       Anywhere (v6)
+    80/tcp (v6)                ALLOW       Anywhere (v6)
 
 
 # 5. HTTP
