@@ -475,6 +475,25 @@ Deployments - faster way of deploying - Vagrant, Ansible, puppet - best engineer
 
 # 7. Saving Data
 
+writing to db and reading from db - 90% of SDE do this
+
+file - easy way of storing way - the problem - writing to file - requires writing to hard disk and it is the slowest level of cache - persisting data - across 1000s of servers - is hard - use platform built to do this
+
+DB - structured way of storing data - querying data - figure
+
+Nosql - redis, mongodb
+
+indexeddb - built in browser?
+
+Node_Reddis, Mysql-server
+
+iptable: ufw
+systemctl: services
+
+WebSocket - Persistent bidirectional connection between client and server - Long Polling
+
+Make a chatbot
+
 # Resources
 
 1. [Slides](jemyoung.com/fsfe)
