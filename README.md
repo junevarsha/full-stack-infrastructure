@@ -492,7 +492,7 @@ systemctl: services
 
 WebSocket - Persistent bidirectional connection between client and server - Long Polling
 
-Make a chatbot
+Make a chatbot: git clone https://github.com/young/fsfev2
 
 # Resources
 
