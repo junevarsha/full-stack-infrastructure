@@ -450,13 +450,28 @@ google - cloudflare support http3 - 20% speed increase
 
 # 6. Containers
 
-Microservices - architecture of loosely connected services - does only thing - opposite is monolith - one app that does everything
+Microservices - architecture of loosely connected services - does only thing - opposite is monolith - one app that does everything - built on concept called containers - both have their usecases - netflix leader of microservices
 
-Containers - Docker - Amazon ECS - Apache Mesos - CoreOS rkt
+VM - whole OS - Containers - Docker - run on just system of libraries - process isolation - segment VPS - doesnt care about OS - Columbo way of doing things - just the facts
 
+Containers - one server - micro servers in it - scale up and scale down faster - roll it out much faster - easier to manage?? :p - decoupled app from infra - easier for dev - portable and lightweight
+
+Docker - Amazon ECS.. Containerazition - layer that talks between te app and OS
 Orchestration - Kubernetes - Load Balancing - Elastic computing
 
-Load Balancing scheduling Algorithms
+Netflix - Titus performs containerization
+
+Orchestration - automation building containers, load balancing and other manual setup...?
+
+K8s - god of spending money
+
+Load Balancer - routes based on load on the server - scheduling algorithms - RR, IPH, RC, LC, LL - top/htop command - to see the load - to see cpu cycles
+
+Nginx - can be used for load balancing - gets the load - does everything for you - it is jack of all trades
+
+Session Data - Load balancing - how do you stick the data - to solve use IP hashing to always go to same server - finish authorization earlier before hitting nginx
+
+Deployments - faster way of deploying - Vagrant, Ansible, puppet - best engineers are lazy engineers
 
 # 7. Saving Data
 
