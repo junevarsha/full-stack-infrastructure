@@ -496,6 +496,6 @@ Make a chatbot: git clone https://github.com/young/fsfev2
 
 # Resources
 
-1. [Slides](jemyoung.com/fsfe)
+1. [Slides](https://docs.google.com/presentation/d/1Mvf_rOFz1wZeH1irajJqhRQgzid7BkqJBd8wigpz39M/edit)
 2. [NotesBackup in drive](https://drive.google.com/file/d/1Qhhj8AoKurf92V7XYAaKqknC2QOKb0yD/view?usp=sharing)
 3. [Akamai http2](https://http2.akamai.com/demo)
